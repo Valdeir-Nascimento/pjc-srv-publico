@@ -29,6 +29,7 @@ public class Endereco {
 
     @Column(name = "end_bairro", nullable = false)
     private String bairro;
+
     @JoinTable(name = "unidade_endereco", joinColumns = {
             @JoinColumn(name = "end_id", referencedColumnName = "end_id")}, inverseJoinColumns = {
             @JoinColumn(name = "unid_id", referencedColumnName = "unid_id")}

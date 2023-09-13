@@ -15,9 +15,8 @@ public class Lotacao {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Basic(optional = false)
     @Column(name = "lot_id")
-    private Integer lotId;
+    private Integer id;
 
     @Column(name = "lot_data_lotacao")
     @Temporal(TemporalType.DATE)
