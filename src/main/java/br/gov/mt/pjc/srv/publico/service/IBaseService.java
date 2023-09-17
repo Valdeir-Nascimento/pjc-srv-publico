@@ -24,7 +24,7 @@ public interface IBaseService<T, S, R> {
      * @param id O ID da entidade a ser encontrada.
      * @return Um DTO que representa a entidade encontrada, se existir.
      */
-    R encontrarPorId(Long id);
+    R buscarPorId(Integer id);
 
     /**
      * Cria uma nova entidade do tipo T com base no DTO de solicitação.
@@ -41,13 +41,13 @@ public interface IBaseService<T, S, R> {
      * @param request O DTO de solicitação que contém os dados atualizados.
      * @return Um DTO que representa a entidade atualizada, se a atualização for bem-sucedida.
      */
-    R atualizar(Long id, S request);
+    R atualizar(Integer id, S request);
 
     /**
      * Exclui uma entidade do tipo T com base no ID.
      *
      * @param id O ID da entidade a ser excluída.
      */
-    void excluir(Long id);
+    void excluir(Integer id);
 
 }

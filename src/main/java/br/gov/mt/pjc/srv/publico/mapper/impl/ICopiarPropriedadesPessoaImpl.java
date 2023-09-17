@@ -1,21 +1,21 @@
 package br.gov.mt.pjc.srv.publico.mapper.impl;
 
-import br.gov.mt.pjc.srv.publico.dto.PessoaResponse;
+import br.gov.mt.pjc.srv.publico.dto.PessoaRequest;
 import br.gov.mt.pjc.srv.publico.entity.Pessoa;
-import br.gov.mt.pjc.srv.publico.mapper.IResponseMapper;
+import br.gov.mt.pjc.srv.publico.mapper.ICopiaPropriedades;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
-public class PessoaResponseMapperImpl implements IResponseMapper<Pessoa, PessoaResponse> {
+public class ICopiarPropriedadesPessoaImpl implements ICopiaPropriedades<Pessoa, PessoaRequest> {
 
     private final ModelMapper mapper;
 
     @Override
-    public PessoaResponse toResponse(Pessoa entity) {
-        return mapper.map(entity, PessoaResponse.class);
+    public void copiar(PessoaRequest source, Pessoa entity) {
+        mapper.map(source, entity);
     }
 
 }
