@@ -1,5 +1,6 @@
 package br.gov.mt.pjc.srv.publico.dto;
 
+import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -7,10 +8,15 @@ import lombok.Setter;
 @Getter
 public class PessoaRequest {
 
+    @NotBlank
     private String nome;
+    @NotBlank
     private String dataNascimento;
+    @NotBlank
     private String sexo;
+    @NotBlank
     private String mae;
+    @NotBlank
     private String pai;
 
 }

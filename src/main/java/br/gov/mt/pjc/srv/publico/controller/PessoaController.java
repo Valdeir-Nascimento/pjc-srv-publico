@@ -4,12 +4,11 @@ import br.gov.mt.pjc.srv.publico.dto.PessoaRequest;
 import br.gov.mt.pjc.srv.publico.dto.PessoaResponse;
 import br.gov.mt.pjc.srv.publico.entity.Pessoa;
 import br.gov.mt.pjc.srv.publico.service.IBaseService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -30,6 +29,12 @@ public class PessoaController {
     public ResponseEntity<PessoaResponse> buscar(@PathVariable Integer idPessoa) {
         PessoaResponse pessoaResponse = pessoaService.buscarPorId(idPessoa);
         return ResponseEntity.ok().body(pessoaResponse);
+    }
+
+    @PostMapping
+    public ResponseEntity<PessoaResponse> cadastrar(@Valid @RequestBody PessoaRequest request) {
+        PessoaResponse pessoaResponse = pessoaService.criar(request);
+        return ResponseEntity.status(HttpStatus.CREATED).body(pessoaResponse);
     }
 
 }
