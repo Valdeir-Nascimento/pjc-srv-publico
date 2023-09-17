@@ -43,7 +43,7 @@ public class PessoaServiceImpl implements IBaseService<Pessoa, PessoaRequest, Pe
     }
 
     @Override
-    public PessoaResponse atualizar(Integer id, PessoaRequest request) {
+    public PessoaResponse editar(Integer id, PessoaRequest request) {
         PessoaResponse pessoaAtual = buscarPorId(id);
         Pessoa entity = baseMapper.toConvert(pessoaAtual);
         copiaPropriedadesRequest.copiar(request, entity);

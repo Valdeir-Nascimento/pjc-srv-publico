@@ -37,4 +37,10 @@ public class PessoaController {
         return ResponseEntity.status(HttpStatus.CREATED).body(pessoaResponse);
     }
 
+    @PutMapping("/{idPessoa}")
+    public ResponseEntity<PessoaResponse> editar(@PathVariable Integer idPessoa, @Valid @RequestBody PessoaRequest request) {
+        PessoaResponse pessoaResponse = pessoaService.editar(idPessoa, request);
+        return ResponseEntity.ok().body(pessoaResponse);
+    }
+
 }

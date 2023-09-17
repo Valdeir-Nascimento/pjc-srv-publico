@@ -41,7 +41,7 @@ public interface IBaseService<T, S, R> {
      * @param request O DTO de solicitação que contém os dados atualizados.
      * @return Um DTO que representa a entidade atualizada, se a atualização for bem-sucedida.
      */
-    R atualizar(Integer id, S request);
+    R editar(Integer id, S request);
 
     /**
      * Exclui uma entidade do tipo T com base no ID.
