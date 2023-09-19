@@ -4,11 +4,11 @@ import br.gov.mt.pjc.srv.publico.dto.request.ServidorEfetivoRequest;
 import br.gov.mt.pjc.srv.publico.dto.response.ServidorEfetivoResponse;
 import br.gov.mt.pjc.srv.publico.entity.ServidorEfetivo;
 import br.gov.mt.pjc.srv.publico.service.IBaseService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -23,6 +23,30 @@ public class ServidorEfetivoController {
     public ResponseEntity<List<ServidorEfetivoResponse>> listar() {
         List<ServidorEfetivoResponse> servidoresEfetivos = servidorEfetivoService.listarTodos();
         return ResponseEntity.ok().body(servidoresEfetivos);
+    }
+
+    @GetMapping("/{idServidorEfetivo}")
+    public ResponseEntity<ServidorEfetivoResponse> buscar(@PathVariable Integer idServidorEfetivo) {
+        ServidorEfetivoResponse pessoaResponse = servidorEfetivoService.buscarPorId(idServidorEfetivo);
+        return ResponseEntity.ok().body(pessoaResponse);
+    }
+
+    @PostMapping
+    public ResponseEntity<ServidorEfetivoResponse> cadastrar(@Valid @RequestBody ServidorEfetivoRequest request) {
+        ServidorEfetivoResponse servidorEfetivoResponse = servidorEfetivoService.criar(request);
+        return ResponseEntity.status(HttpStatus.CREATED).body(servidorEfetivoResponse);
+    }
+
+    @PutMapping("/{idServidorEfetivo}")
+    public ResponseEntity<ServidorEfetivoResponse> editar(@PathVariable Integer idServidorEfetivo, @Valid @RequestBody ServidorEfetivoRequest request) {
+        ServidorEfetivoResponse servidorEfetivoResponse = servidorEfetivoService.editar(idServidorEfetivo, request);
+        return ResponseEntity.ok().body(servidorEfetivoResponse);
+    }
+
+    @DeleteMapping("/{idServidorEfetivo}")
+    public ResponseEntity<Void> excluir(@PathVariable Integer idServidorEfetivo) {
+        servidorEfetivoService.excluir(idServidorEfetivo);
+        return ResponseEntity.noContent().build();
     }
 
 }
