@@ -1,7 +1,7 @@
 package br.gov.mt.pjc.srv.publico.service.impl;
 
-import br.gov.mt.pjc.srv.publico.dto.PessoaRequest;
-import br.gov.mt.pjc.srv.publico.dto.PessoaResponse;
+import br.gov.mt.pjc.srv.publico.dto.request.PessoaRequest;
+import br.gov.mt.pjc.srv.publico.dto.response.PessoaResponse;
 import br.gov.mt.pjc.srv.publico.entity.Pessoa;
 import br.gov.mt.pjc.srv.publico.exception.PessoaNaoEncontradaException;
 import br.gov.mt.pjc.srv.publico.mapper.IBaseMapper;

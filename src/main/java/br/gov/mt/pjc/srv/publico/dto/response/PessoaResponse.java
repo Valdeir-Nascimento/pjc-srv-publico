@@ -1,22 +1,17 @@
-package br.gov.mt.pjc.srv.publico.dto;
+package br.gov.mt.pjc.srv.publico.dto.response;
 
-import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
 import lombok.Setter;
 
 @Setter
 @Getter
-public class PessoaRequest {
+public class PessoaResponse {
 
-    @NotBlank
+    private String id;
     private String nome;
-    @NotBlank
     private String dataNascimento;
-    @NotBlank
     private String sexo;
-    @NotBlank
     private String mae;
-    @NotBlank
     private String pai;
 
 }

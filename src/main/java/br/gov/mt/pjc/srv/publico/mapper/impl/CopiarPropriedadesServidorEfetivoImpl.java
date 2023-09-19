@@ -1,7 +1,7 @@
 package br.gov.mt.pjc.srv.publico.mapper.impl;
 
-import br.gov.mt.pjc.srv.publico.dto.PessoaRequest;
-import br.gov.mt.pjc.srv.publico.entity.Pessoa;
+import br.gov.mt.pjc.srv.publico.dto.request.ServidorEfetivoRequest;
+import br.gov.mt.pjc.srv.publico.entity.ServidorEfetivo;
 import br.gov.mt.pjc.srv.publico.mapper.ICopiaPropriedades;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
@@ -9,13 +9,11 @@ import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
-public class ICopiarPropriedadesPessoaImpl implements ICopiaPropriedades<Pessoa, PessoaRequest> {
+public class CopiarPropriedadesServidorEfetivoImpl implements ICopiaPropriedades<ServidorEfetivo, ServidorEfetivoRequest> {
 
     private final ModelMapper mapper;
-
     @Override
-    public void copiar(PessoaRequest source, Pessoa entity) {
+    public void copiar(ServidorEfetivoRequest source, ServidorEfetivo entity) {
         mapper.map(source, entity);
     }
-
 }

@@ -1,7 +1,7 @@
 package br.gov.mt.pjc.srv.publico.controller;
 
-import br.gov.mt.pjc.srv.publico.dto.PessoaRequest;
-import br.gov.mt.pjc.srv.publico.dto.PessoaResponse;
+import br.gov.mt.pjc.srv.publico.dto.request.PessoaRequest;
+import br.gov.mt.pjc.srv.publico.dto.response.PessoaResponse;
 import br.gov.mt.pjc.srv.publico.entity.Pessoa;
 import br.gov.mt.pjc.srv.publico.service.IBaseService;
 import jakarta.validation.Valid;
