@@ -45,7 +45,6 @@ VALUES (1, CURRENT_DATE, NULL, '00001', 1, 1),
        (5, CURRENT_DATE, NULL, '00005', 5, 3),
        (6, CURRENT_DATE, NULL, '00006', 6, 3);
 
-
 INSERT INTO cidade(cid_id, cid_nome, cid_uf)
 VALUES (1, 'Teresina', 'PI'),
        (2, 'São Luís', 'MA'),
@@ -69,4 +68,10 @@ VALUES (1, 1),
        (2, 2),
        (3, 3);
 
-INSERT INTO
+INSERT INTO pessoa_endereco(pes_id, end_id)
+VALUES (1, 1),
+       (2, 2),
+       (3, 3),
+       (4, 4),
+       (5, 5),
+       (6, 6);
