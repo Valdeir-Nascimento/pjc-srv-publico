@@ -12,14 +12,10 @@ BEGIN
            uni.unid_nome as unidade_lotacao,
            fot.fp_bucket as fotografia
     FROM pessoa pes
-    INNER JOIN foto_pessoa fot
-        ON pes.pes_id = fot.pes_id
-    INNER JOIN servidor_efetivo srv
-        ON srv.pes_id = pes.pes_id
-    INNER JOIN lotacao lot
-        ON lot.pes_id = pes.pes_id
-    INNER JOIN unidade uni
-        ON uni.unid_id = lot.unid_id
+    INNER JOIN foto_pessoa fot ON pes.pes_id = fot.pes_id
+    INNER JOIN servidor_efetivo srv ON srv.pes_id = pes.pes_id
+    INNER JOIN lotacao lot ON lot.pes_id = pes.pes_id
+    INNER JOIN unidade uni ON uni.unid_id = lot.unid_id
     ORDER BY pes.pes_nome;
 END;
 $$ LANGUAGE plpgsql;

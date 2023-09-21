@@ -8,8 +8,8 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 @EntityScan(basePackages = "br.gov.mt.pjc.srv.publico.entity")
 public class Application {
 
-	public static void main(String[] args) {
-		SpringApplication.run(Application.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(Application.class, args);
+    }
 
 }

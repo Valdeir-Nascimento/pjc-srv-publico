@@ -7,7 +7,7 @@ import lombok.Setter;
 @Getter
 public class PessoaResponse {
 
-    private String id;
+    private Integer id;
     private String nome;
     private String dataNascimento;
     private String sexo;
