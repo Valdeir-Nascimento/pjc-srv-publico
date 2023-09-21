@@ -1,4 +1,4 @@
-CREATE OR REPLACE FUNCTION spe_consultar_endereco_funcional(p_nome VARCHAR)
+CREATE OR REPLACE FUNCTION speConsultarEnderecoFuncional(p_nome VARCHAR)
 RETURNS TABLE (endereco VARCHAR) AS $$
 BEGIN
     RETURN QUERY
