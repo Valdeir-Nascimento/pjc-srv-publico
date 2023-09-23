@@ -17,7 +17,7 @@ import java.util.List;
 @RequestMapping(path = "/api/v1/pessoas")
 public class PessoaController {
 
-    private final IBaseService<Pessoa, PessoaRequest, PessoaResponse> pessoaService;
+    private final IBaseService<PessoaRequest, PessoaResponse> pessoaService;
 
     @GetMapping
     public ResponseEntity<List<PessoaResponse>> listar() {

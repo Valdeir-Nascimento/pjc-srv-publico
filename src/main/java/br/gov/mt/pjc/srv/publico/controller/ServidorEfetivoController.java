@@ -17,7 +17,7 @@ import java.util.List;
 @RequestMapping(path = "/api/v1/servidores-efetivos")
 public class ServidorEfetivoController {
 
-    private final IBaseService<ServidorEfetivo, ServidorEfetivoRequest, ServidorEfetivoResponse> servidorEfetivoService;
+    private final IBaseService<ServidorEfetivoRequest, ServidorEfetivoResponse> servidorEfetivoService;
 
     @GetMapping
     public ResponseEntity<List<ServidorEfetivoResponse>> listar() {

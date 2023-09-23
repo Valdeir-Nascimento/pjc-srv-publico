@@ -2,6 +2,7 @@ package br.gov.mt.pjc.srv.publico.exception.handler;
 
 
 import br.gov.mt.pjc.srv.publico.exception.PessoaNaoEncontradaException;
+import br.gov.mt.pjc.srv.publico.exception.UnidadeNaoEncontradaException;
 import br.gov.mt.pjc.srv.publico.util.ConstantesUtil;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.exc.InvalidFormatException;
@@ -47,7 +48,16 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
     }
 
     @ExceptionHandler(PessoaNaoEncontradaException.class)
-    public ResponseEntity<?> handleFazendaNaoEncontradaException(PessoaNaoEncontradaException ex, WebRequest request) {
+    public ResponseEntity<?> handlePessoaNaoEncontradaException(PessoaNaoEncontradaException ex, WebRequest request) {
+        HttpStatus status = HttpStatus.NOT_FOUND;
+        ProblemType problemType = ProblemType.RECURSO_NAO_ENCONTRADO;
+        String detail = ex.getMessage();
+        Problem problem = createProblemBuilder(status, problemType, detail).build();
+        return handleExceptionInternal(ex, problem, new HttpHeaders(), status, request);
+    }
+
+    @ExceptionHandler(UnidadeNaoEncontradaException.class)
+    public ResponseEntity<?> handleUnidadeNaoEncontradaException(UnidadeNaoEncontradaException ex, WebRequest request) {
         HttpStatus status = HttpStatus.NOT_FOUND;
         ProblemType problemType = ProblemType.RECURSO_NAO_ENCONTRADO;
         String detail = ex.getMessage();

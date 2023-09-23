@@ -16,7 +16,7 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class ServidorEfetivoServiceImpl implements IBaseService<ServidorEfetivo, ServidorEfetivoRequest, ServidorEfetivoResponse> {
+public class ServidorEfetivoServiceImpl implements IBaseService<ServidorEfetivoRequest, ServidorEfetivoResponse> {
 
     private final IServidorEfetivoRepository servidorEfetivoRepository;
     private final ICopiaPropriedades<ServidorEfetivo, ServidorEfetivoRequest> copiaPropriedades;

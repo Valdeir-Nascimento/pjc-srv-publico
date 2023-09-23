@@ -15,8 +15,8 @@ public class FuncionarioEfetivoServiceImpl implements IFuncionarioEfetivoService
     private final IFuncionarioEfetivoRepository servidorEfetivoRepository;
 
     @Override
-    public List<FuncionarioEfetivoResponse> consultar() {
-        return servidorEfetivoRepository.getFuncionariosEfetivos();
+    public List<FuncionarioEfetivoResponse> consultar(Integer idUnidade) {
+        return servidorEfetivoRepository.getFuncionariosEfetivosPorUnidade(idUnidade);
     }
 
 }

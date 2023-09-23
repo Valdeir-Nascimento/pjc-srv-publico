@@ -1,4 +1,4 @@
-CREATE OR REPLACE FUNCTION speConsultarFuncionariosEfetivos()
+CREATE OR REPLACE FUNCTION speConsultarFuncionariosEfetivos(p_unidade_id INTEGER)
 RETURNS TABLE (
     nome VARCHAR,
     idade INTEGER,
@@ -16,6 +16,6 @@ BEGIN
     INNER JOIN servidor_efetivo srv ON srv.pes_id = pes.pes_id
     INNER JOIN lotacao lot ON lot.pes_id = pes.pes_id
     INNER JOIN unidade uni ON uni.unid_id = lot.unid_id
-    ORDER BY pes.pes_nome;
+    WHERE uni.unid_id = p_unidade_id ORDER BY pes.pes_nome;
 END;
 $$ LANGUAGE plpgsql;

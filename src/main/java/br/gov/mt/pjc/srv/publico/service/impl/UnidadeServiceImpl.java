@@ -16,7 +16,7 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class UnidadeServiceImpl implements IBaseService<Unidade, UnidadeRequest, UnidadeResponse> {
+public class UnidadeServiceImpl implements IBaseService<UnidadeRequest, UnidadeResponse> {
 
     private final IUnidadeRepository unidadeRepository;
     private final ICopiaPropriedades<Unidade, UnidadeRequest> copiaPropriedades;

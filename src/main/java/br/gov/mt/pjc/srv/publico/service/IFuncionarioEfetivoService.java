@@ -6,6 +6,6 @@ import java.util.List;
 
 public interface IFuncionarioEfetivoService {
 
-    List<FuncionarioEfetivoResponse> consultar();
+    List<FuncionarioEfetivoResponse> consultar(Integer idUnidade);
 
 }

@@ -2,10 +2,14 @@ package br.gov.mt.pjc.srv.publico.repository.impl;
 
 import br.gov.mt.pjc.srv.publico.dto.request.FuncionarioEfetivoResponse;
 import br.gov.mt.pjc.srv.publico.repository.IFuncionarioEfetivoRepository;
+import br.gov.mt.pjc.srv.publico.repository.validator.IValidarUnidadeRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
+import org.springframework.util.CollectionUtils;
 
+import java.util.Collections;
 import java.util.List;
 
 @Repository
@@ -13,18 +17,21 @@ import java.util.List;
 public class FuncionarioEfetivoRepositoryImpl implements IFuncionarioEfetivoRepository {
 
     private final JdbcTemplate jdbcTemplate;
+    private final IValidarUnidadeRepository validarUnidadeRepository;
 
     @Override
-    public List<FuncionarioEfetivoResponse> getFuncionariosEfetivos() {
-        String sql = "SELECT * FROM speConsultarFuncionariosEfetivos()";
-        return jdbcTemplate.query(sql, (rs, rowNum) -> {
-            FuncionarioEfetivoResponse funcionario = new FuncionarioEfetivoResponse();
-            funcionario.setNome(rs.getString("nome"));
-            funcionario.setIdade(rs.getInt("idade"));
-            funcionario.setUnidadeLotacao(rs.getString("unidade_lotacao"));
-            funcionario.setFotografia(rs.getString("fotografia"));
-            return funcionario;
-        });
+    public List<FuncionarioEfetivoResponse> getFuncionariosEfetivosPorUnidade(Integer idUnidade) {
+        validarUnidadeRepository.validar(idUnidade);
+        String sql = "SELECT nome, idade, unidade_lotacao, fotografia  FROM speConsultarFuncionariosEfetivos(?)";
+        List<FuncionarioEfetivoResponse> funcionarios = jdbcTemplate.query(
+                sql,
+                new Object[]{idUnidade},
+                BeanPropertyRowMapper.newInstance(FuncionarioEfetivoResponse.class)
+        );
+        if (CollectionUtils.isEmpty(funcionarios)) {
+            return Collections.emptyList();
+        }
+        return funcionarios;
     }
 
 }

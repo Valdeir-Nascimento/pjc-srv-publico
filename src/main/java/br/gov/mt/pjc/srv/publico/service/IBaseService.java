@@ -9,7 +9,7 @@ import java.util.List;
  * @param <S> O tipo de DTO usado para criar ou atualizar a entidade (Request).
  * @param <R> O tipo de DTO usado para representar a entidade em respostas (Response).
  */
-public interface IBaseService<T, S, R> {
+public interface IBaseService<S, R> {
 
     /**
      * Lista todas as entidades do tipo T.

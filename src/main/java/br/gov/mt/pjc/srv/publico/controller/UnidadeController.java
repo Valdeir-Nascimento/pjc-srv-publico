@@ -17,7 +17,7 @@ import java.util.List;
 @RequestMapping(path = "/api/v1/unidades")
 public class UnidadeController {
     
-    private final IBaseService<Unidade, UnidadeRequest, UnidadeResponse> unidadeService;
+    private final IBaseService<UnidadeRequest, UnidadeResponse> unidadeService;
 
     @GetMapping
     public ResponseEntity<List<UnidadeResponse>> listar() {

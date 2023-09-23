@@ -6,6 +6,6 @@ import java.util.List;
 
 public interface IFuncionarioEfetivoRepository {
 
-    List<FuncionarioEfetivoResponse> getFuncionariosEfetivos();
+    List<FuncionarioEfetivoResponse> getFuncionariosEfetivosPorUnidade(Integer idUnidade);
 
 }
