@@ -1,6 +1,6 @@
 package br.gov.mt.pjc.srv.publico.repository;
 
-import br.gov.mt.pjc.srv.publico.dto.request.FuncionarioEfetivoResponse;
+import br.gov.mt.pjc.srv.publico.dto.response.FuncionarioEfetivoResponse;
 
 import java.util.List;
 

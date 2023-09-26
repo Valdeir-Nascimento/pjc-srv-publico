@@ -36,7 +36,7 @@ public class PessoaServiceImpl implements IBaseService<PessoaRequest, PessoaResp
     }
 
     @Override
-    public PessoaResponse criar(PessoaRequest request) {
+    public PessoaResponse cadastrar(PessoaRequest request) {
         Pessoa pessoa = baseMapper.toEntity(request);
         pessoa = pessoaRepository.save(pessoa);
         return baseMapper.toResponse(pessoa);

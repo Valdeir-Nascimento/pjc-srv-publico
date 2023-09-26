@@ -2,7 +2,6 @@ package br.gov.mt.pjc.srv.publico.controller;
 
 import br.gov.mt.pjc.srv.publico.dto.request.UnidadeRequest;
 import br.gov.mt.pjc.srv.publico.dto.response.UnidadeResponse;
-import br.gov.mt.pjc.srv.publico.entity.Unidade;
 import br.gov.mt.pjc.srv.publico.service.IBaseService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -33,7 +32,7 @@ public class UnidadeController {
 
     @PostMapping
     public ResponseEntity<UnidadeResponse> cadastrar(@Valid @RequestBody UnidadeRequest request) {
-        UnidadeResponse UnidadeResponse = unidadeService.criar(request);
+        UnidadeResponse UnidadeResponse = unidadeService.cadastrar(request);
         return ResponseEntity.status(HttpStatus.CREATED).body(UnidadeResponse);
     }
 

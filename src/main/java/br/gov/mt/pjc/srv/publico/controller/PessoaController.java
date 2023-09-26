@@ -2,7 +2,6 @@ package br.gov.mt.pjc.srv.publico.controller;
 
 import br.gov.mt.pjc.srv.publico.dto.request.PessoaRequest;
 import br.gov.mt.pjc.srv.publico.dto.response.PessoaResponse;
-import br.gov.mt.pjc.srv.publico.entity.Pessoa;
 import br.gov.mt.pjc.srv.publico.service.IBaseService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -33,7 +32,7 @@ public class PessoaController {
 
     @PostMapping
     public ResponseEntity<PessoaResponse> cadastrar(@Valid @RequestBody PessoaRequest request) {
-        PessoaResponse pessoaResponse = pessoaService.criar(request);
+        PessoaResponse pessoaResponse = pessoaService.cadastrar(request);
         return ResponseEntity.status(HttpStatus.CREATED).body(pessoaResponse);
     }
 

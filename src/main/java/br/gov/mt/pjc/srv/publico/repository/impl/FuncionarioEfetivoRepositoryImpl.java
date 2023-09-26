@@ -1,6 +1,6 @@
 package br.gov.mt.pjc.srv.publico.repository.impl;
 
-import br.gov.mt.pjc.srv.publico.dto.request.FuncionarioEfetivoResponse;
+import br.gov.mt.pjc.srv.publico.dto.response.FuncionarioEfetivoResponse;
 import br.gov.mt.pjc.srv.publico.repository.IFuncionarioEfetivoRepository;
 import br.gov.mt.pjc.srv.publico.repository.validator.IValidarUnidadeRepository;
 import lombok.RequiredArgsConstructor;

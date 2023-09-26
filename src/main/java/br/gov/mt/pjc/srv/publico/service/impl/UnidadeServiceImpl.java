@@ -36,7 +36,7 @@ public class UnidadeServiceImpl implements IBaseService<UnidadeRequest, UnidadeR
     }
 
     @Override
-    public UnidadeResponse criar(UnidadeRequest request) {
+    public UnidadeResponse cadastrar(UnidadeRequest request) {
         Unidade unidade = baseMapper.toEntity(request);
         unidade = unidadeRepository.save(unidade);
         return baseMapper.toResponse(unidade);

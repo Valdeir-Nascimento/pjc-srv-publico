@@ -2,7 +2,6 @@ package br.gov.mt.pjc.srv.publico.controller;
 
 import br.gov.mt.pjc.srv.publico.dto.request.ServidorEfetivoRequest;
 import br.gov.mt.pjc.srv.publico.dto.response.ServidorEfetivoResponse;
-import br.gov.mt.pjc.srv.publico.entity.ServidorEfetivo;
 import br.gov.mt.pjc.srv.publico.service.IBaseService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -33,7 +32,7 @@ public class ServidorEfetivoController {
 
     @PostMapping
     public ResponseEntity<ServidorEfetivoResponse> cadastrar(@Valid @RequestBody ServidorEfetivoRequest request) {
-        ServidorEfetivoResponse servidorEfetivoResponse = servidorEfetivoService.criar(request);
+        ServidorEfetivoResponse servidorEfetivoResponse = servidorEfetivoService.cadastrar(request);
         return ResponseEntity.status(HttpStatus.CREATED).body(servidorEfetivoResponse);
     }
 

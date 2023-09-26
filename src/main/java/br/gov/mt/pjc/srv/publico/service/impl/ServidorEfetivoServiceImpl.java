@@ -37,7 +37,7 @@ public class ServidorEfetivoServiceImpl implements IBaseService<ServidorEfetivoR
     }
 
     @Override
-    public ServidorEfetivoResponse criar(ServidorEfetivoRequest request) {
+    public ServidorEfetivoResponse cadastrar(ServidorEfetivoRequest request) {
         ServidorEfetivo servidorEfetivo = baseMapper.toEntity(request);
         servidorEfetivo = servidorEfetivoRepository.save(servidorEfetivo);
         return baseMapper.toResponse(servidorEfetivo);

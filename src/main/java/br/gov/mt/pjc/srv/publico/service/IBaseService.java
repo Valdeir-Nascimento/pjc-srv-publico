@@ -4,8 +4,6 @@ import java.util.List;
 
 /**
  * Interface génerica para um serviço de CRUD (Create, Read, Update, Delete)
- *
- * @param <T> O tipo da entidade que este serviço CRUD manipula.
  * @param <S> O tipo de DTO usado para criar ou atualizar a entidade (Request).
  * @param <R> O tipo de DTO usado para representar a entidade em respostas (Response).
  */
@@ -32,7 +30,7 @@ public interface IBaseService<S, R> {
      * @param request O DTO de solicitação que contém os dados da nova entidade.
      * @return Um DTO que representa a nova entidade criada.
      */
-    R criar(S request);
+    R cadastrar(S request);
 
     /**
      * Atualiza uma entidade do tipo T com base no ID e no DTO de solicitação.

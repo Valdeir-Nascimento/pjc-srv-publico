@@ -1,6 +1,6 @@
 package br.gov.mt.pjc.srv.publico.controller;
 
-import br.gov.mt.pjc.srv.publico.dto.request.FuncionarioEfetivoResponse;
+import br.gov.mt.pjc.srv.publico.dto.response.FuncionarioEfetivoResponse;
 import br.gov.mt.pjc.srv.publico.service.IFuncionarioEfetivoService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

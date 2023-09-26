@@ -1,8 +1,8 @@
 CREATE OR REPLACE FUNCTION speConsultarEnderecoFuncional(p_nome VARCHAR)
-RETURNS TABLE (endereco VARCHAR) AS $$
+RETURNS TABLE (endereco CHARACTER VARYING) AS $$
 BEGIN
     RETURN QUERY
-    SELECT CONCAT(ende.end_logradouro, ', ', ende.end_numero, ', ', ende.end_bairro) AS endereco
+    SELECT CONCAT(ende.end_logradouro, ', ', ende.end_numero, ', ', ende.end_bairro)::CHARACTER VARYING AS endereco
     FROM pessoa pes
     INNER JOIN lotacao lot ON lot.pes_id = pes.pes_id
     INNER JOIN unidade uni ON uni.unid_id = lot.unid_id
